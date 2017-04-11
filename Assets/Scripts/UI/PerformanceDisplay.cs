@@ -40,7 +40,7 @@ public class PerformanceDisplay : MonoBehaviour
             {
                 if (_profilers[i].IsCalculating)
                 {
-                    profilersInfo += _profilers[i].GetInfo() + " | ";
+                    profilersInfo += _profilers[i].GetInfo() + "\r\n";
                 }
             }
 

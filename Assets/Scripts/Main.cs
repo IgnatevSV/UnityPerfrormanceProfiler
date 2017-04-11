@@ -3,15 +3,23 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    PerformanceDisplay performanceDisplay;
+    PerformanceDisplay _performanceDisplay;
 
     List<Profiler> _profilers = new List<Profiler>();
 
-    private void Start()
+    void Start()
     {
         InitProfilers();
         InitProfilersDisplay();
     }
+
+    
+    void Update()
+    {
+        CPU_Profiler.Begin("Main:Update");
+        CPU_Profiler.End("Main:Update");
+    }
+    
 
     void InitProfilers()
     {
@@ -25,8 +33,8 @@ public class Main : MonoBehaviour
 
     void InitProfilersDisplay()
     {
-        performanceDisplay = FindObjectOfType<PerformanceDisplay>();
+        _performanceDisplay = FindObjectOfType<PerformanceDisplay>();
 
-        performanceDisplay.IsProfilingActive = true;
+        _performanceDisplay.IsProfilingActive = true;
     }
 }

@@ -28,7 +28,7 @@ public class FPS_Profiler : Profiler
     public override string GetInfo()
     {
         string fpsInfo =
-            "FPS " +
+            "FPS: " +
             "Max: " + MaxFPS.ToString() + " " +
             "Avg: " + AvgFPS.ToString() + " " +
             "Min: " + MinFPS.ToString();
