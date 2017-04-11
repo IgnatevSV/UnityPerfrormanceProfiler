@@ -1,13 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PerformanceDisplay : MonoBehaviour
 {
-    [SerializeField]
-    Text textLine;
-
     [SerializeField]
     float _delayBetweenMessage = 1f;
 
@@ -22,15 +18,6 @@ public class PerformanceDisplay : MonoBehaviour
         {
             _isProfilingActive = value;
             StartCoroutine(DisplayProfilersInfo());
-
-            if(value)
-            {
-                Application.logMessageReceived += LogMessage;
-            }
-            else
-            {
-                Application.logMessageReceived -= LogMessage;
-            }
         }
     }
 
@@ -42,11 +29,6 @@ public class PerformanceDisplay : MonoBehaviour
     void FindProfilers()
     {
         _profilers.AddRange(FindObjectsOfType<Profiler>());
-    }
-
-    void LogMessage(string message, string stackTrace, LogType type)
-    {
-        textLine.text = message;
     }
 
     IEnumerator DisplayProfilersInfo()

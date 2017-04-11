@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Profilers\FPS_Profiler.cs" />
     <Compile Include="Assets\Scripts\Profilers\Memory_Profiler.cs" />
     <Compile Include="Assets\Scripts\Profilers\Profiler.cs" />
+    <Compile Include="Assets\Scripts\UI\OSD_Console.cs" />
     <Compile Include="Assets\Scripts\UI\PerformanceDisplay.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
